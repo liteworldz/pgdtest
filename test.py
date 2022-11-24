@@ -10,6 +10,12 @@ import dataset
 import time
 import torchattacks
 
+
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2'
+from models import *
+
+
 filename = 'resnet18_NT.pth'
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 

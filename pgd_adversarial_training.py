@@ -9,7 +9,10 @@ import torchvision.transforms as transforms
 import torchattacks
 import dataset
 
+
 import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2'
+from models import *
 
 from models import *
 
