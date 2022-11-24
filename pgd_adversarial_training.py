@@ -12,9 +12,7 @@ import dataset
 
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2'
-from models import *
-
-from models import *
+import torchvision.models as models
 
 learning_rate = 0.1
 
@@ -30,7 +28,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 trainloader, valloader, testloader = dataset.get_loader()
 
-net = ResNet18()
+net = models.resnet18()
 net = net.to(device)
 net = torch.nn.DataParallel(net)
 cudnn.benchmark = True

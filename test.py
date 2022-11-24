@@ -5,7 +5,7 @@ import torch.backends.cudnn as cudnn
 import torchvision
 import torchvision.transforms as transforms
 
-from models import *
+import torchvision.models as models
 import dataset
 import time
 import torchattacks
@@ -25,7 +25,7 @@ STEPS= 10
 
 trainloader, valloader, testloader = dataset.get_loader()
 
-net = ResNet18()
+net = models.resnet18()
 net = net.to(device)
 net = torch.nn.DataParallel(net)
 cudnn.benchmark = True
